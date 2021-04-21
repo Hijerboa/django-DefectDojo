@@ -133,6 +133,12 @@ class VeracodeParser(object):
         finding.is_Mitigated = _is_mitigated
         finding.mitigated = _mitigated_date
         finding.active = not _is_mitigated
+        _remediation_status = xml_node.attrib['remediation_status'].lower()
+
+        # Marks findings that are "fixed" in VC as inactive
+        if finding.active:
+            if "fixed" in _remediation_status:
+                finding.active = False
 
         # Check if it's a FP in veracode.
         # Only check in case finding was mitigated, since DD doesn't allow
