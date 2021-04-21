@@ -106,3 +106,10 @@ def construct_imported_message(scan_type, finding_count=0, new_finding_count=0, 
         message = 'No findings were added/updated/closed/reactivated as the findings in Defect Dojo are identical to those in the uploaded report.'
 
     return message
+
+def handles_active_verified_statuses(scan_type):
+    # TODO switch to method in parser
+    # parser = PARSERS[scan_type]
+    return scan_type in [
+        'Generic Findings Import', 'SonarQube API Import', 'Qualys Scan'
+    ]

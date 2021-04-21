@@ -117,8 +117,11 @@ class DojoDefaultReImporter(object):
                 item.reporter = user
                 item.last_reviewed = timezone.now()
                 item.last_reviewed_by = user
-                item.verified = verified
-                item.active = active
+
+                if not importer_utils.handles_active_verified_statuses(scan_type):
+                    item.verified = verified
+                    item.active = active
+
                 # Save it. Don't dedupe before endpoints are added.
                 item.save(dedupe_option=False)
                 logger.debug('%i: reimport creating new finding as no existing finding match: %i:%s:%s:%s', i, item.id, item, item.component_name, item.component_version)

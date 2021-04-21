@@ -77,11 +77,12 @@ class DojoDefaultImporter(object):
             item.last_reviewed = now
             item.last_reviewed_by = user if user else get_current_user
 
-            # Only set active/verified flags if they were NOT set by default value(True)
-            if item.active:
-                item.active = active
-            if item.verified:
-                item.verified = verified
+            # Only set active/verified flag if they are not set by the parser
+            if not importer_utils.handles_active_verified_statuses(scan_type):
+                if item.active:
+                    item.active = active
+                if item.verified:
+                    item.verified = verified
 
             item.created = now
             item.updated = now
