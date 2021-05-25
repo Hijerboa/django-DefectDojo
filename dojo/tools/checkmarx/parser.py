@@ -37,6 +37,9 @@ class CheckmarxParser(object):
         else:
             return "Detailed XML Report. Import all vulnerabilities from checkmarx without aggregation"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     # mode:
     # None (default): aggregates vulnerabilites per sink filename (legacy behavior)
     # 'detailed' : No aggregation

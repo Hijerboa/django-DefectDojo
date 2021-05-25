@@ -16,6 +16,9 @@ class CoverityApiParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Coverity API view data in JSON format (/api/viewContents/issues endpoint)."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         tree = json.load(file)
 

@@ -51,6 +51,13 @@ def requires_file(scan_type):
     return scan_type != SCAN_SONARQUBE_API
 
 
+def handles_active_verified_statuses(scan_type):
+    if scan_type is None or scan_type not in PARSERS:
+        return False
+    return PARSERS[scan_type].handles_active_verified_statuses(scan_type)
+
+
+
 import os
 from inspect import isclass
 from pkgutil import iter_modules

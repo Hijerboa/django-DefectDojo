@@ -28,6 +28,9 @@ class BurpApiParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Burp REST API scan data in JSON format (/scan/[task_id] endpoint)."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         # API export is a JSON file
         tree = json.load(file)

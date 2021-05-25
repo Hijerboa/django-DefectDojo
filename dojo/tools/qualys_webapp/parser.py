@@ -263,3 +263,6 @@ class QualysWebAppParser(object):
 
     def get_findings(self, file, test, enable_weakness=QUALYS_WAS_WEAKNESS_IS_VULN):
         return qualys_webapp_parser(file, test, enable_weakness)
+
+    def handles_active_verified_status(self, scan_type):
+        return False

@@ -15,6 +15,9 @@ class PhpSecurityAuditV2Parser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import PHP Security Audit v2 Scan in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         tree = filename.read()
         try:

@@ -28,6 +28,9 @@ class SonarQubeParser(object):
         else:
             return "Import all findings from sonarqube html report. SonarQube output file can be imported in HTML format. Generate with https://github.com/soprasteria/sonar-report version >= 1.1.0"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         parser = etree.HTMLParser()
         tree = etree.parse(filename, parser)

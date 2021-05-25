@@ -208,6 +208,9 @@ class NessusWASParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Reports can be imported as CSV or .nessus (XML) report formats."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
 
         if filename.name.lower().endswith('.xml') or filename.name.lower().endswith('.nessus'):

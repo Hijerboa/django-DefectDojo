@@ -24,6 +24,9 @@ class FortifyParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Findings from XML file format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         fortify_scan = ElementTree.parse(filename)
         root = fortify_scan.getroot()

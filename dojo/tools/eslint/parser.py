@@ -14,6 +14,9 @@ class ESLintParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "JSON report format"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def _convert_eslint_severity_to_dojo_severity(self, eslint_severity):
         if eslint_severity == 2:
             return "High"

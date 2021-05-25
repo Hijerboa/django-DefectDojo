@@ -38,6 +38,9 @@ class TrivyParser:
     def get_description_for_scan_types(self, scan_type):
         return "Import trivy JSON scan report."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, scan_file, test):
 
         scan_data = scan_file.read()

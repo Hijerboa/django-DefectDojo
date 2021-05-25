@@ -20,6 +20,9 @@ class BurpEnterpriseParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Burp Enterprise Edition findings in HTML format"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         parser = etree.HTMLParser()
         tree = etree.parse(filename, parser)

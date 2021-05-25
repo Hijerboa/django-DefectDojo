@@ -19,6 +19,9 @@ class GenericParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Generic findings in CSV format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test, active=None, verified=None):
         if filename.name.lower().endswith(".csv"):
             return self.get_findings_csv(filename, test, active, verified)

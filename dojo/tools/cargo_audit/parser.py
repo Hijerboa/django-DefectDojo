@@ -17,6 +17,9 @@ class CargoAuditParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import JSON output for cargo audit scan report."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         data = json.load(filename)
         dupes = {}

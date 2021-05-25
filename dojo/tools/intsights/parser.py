@@ -23,6 +23,9 @@ class IntSightsParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "IntSights report file can be imported in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def _parse_json(self, json_file) -> [dict]:
         """
         Parses entries from the JSON object into a list of alerts

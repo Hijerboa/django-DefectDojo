@@ -75,6 +75,9 @@ class SKFParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Output of SKF Sprint summary export."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def create_chain(self):
         date_column_strategy = DateColumnMappingStrategy()
         title_column_strategy = TitleColumnMappingStrategy()

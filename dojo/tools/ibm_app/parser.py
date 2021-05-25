@@ -21,6 +21,9 @@ class IbmAppParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "XML file from IBM App Scanner."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
 
         ibm_scan_tree = ElementTree.parse(file)

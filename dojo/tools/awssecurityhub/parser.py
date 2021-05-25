@@ -15,6 +15,9 @@ class AwsSecurityHubParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "AWS Security Hub exports in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filehandle, test):
         tree = json.load(filehandle)
         return self.get_items(tree, test)

@@ -22,6 +22,9 @@ class CredScanParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import CSV output of CredScan scan report."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         content = filename.read()
         if type(content) is bytes:

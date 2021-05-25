@@ -7,7 +7,7 @@ from dojo.models import Test, Finding, \
     Test_Import
 
 from dojo.utils import get_current_user, max_safe
-
+from dojo.tools.factory import handles_active_verified_statuses
 from django.core.exceptions import MultipleObjectsReturned
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -78,6 +78,8 @@ class DojoDefaultImporter(object):
             item.reporter = user if user else get_current_user
             item.last_reviewed = now
             item.last_reviewed_by = user if user else get_current_user
+
+            logger.exception(handles_active_verified_statuses(scan_type))
 
             # Only set active/verified flags if they were NOT set by default value(True)
             if item.active:

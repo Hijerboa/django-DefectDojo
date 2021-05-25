@@ -17,6 +17,9 @@ class CheckmarxOsaParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Checkmarx Open Source Analysis for dependencies (json). Generate with `jq -s . CxOSAVulnerabilities.json CxOSALibraries.json`"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filehandle, test):
         tree = json.load(filehandle)
         if len(tree) != 2:

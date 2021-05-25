@@ -18,6 +18,9 @@ class HuskyCIParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import HuskyCI Report vulnerabilities in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, json_output, test):
 
         if json_output is None:

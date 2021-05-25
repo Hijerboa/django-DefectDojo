@@ -27,6 +27,9 @@ class NetsparkerParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Netsparker JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         tree = filename.read()
         try:

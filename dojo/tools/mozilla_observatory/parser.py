@@ -22,6 +22,9 @@ class MozillaObservatoryParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import JSON report."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         data = json.load(file)
         # format from the CLI

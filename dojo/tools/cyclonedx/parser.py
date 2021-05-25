@@ -25,6 +25,9 @@ class CycloneDXParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Reports can be imported CycloneDX (XML) report formats."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         nscan = ElementTree.parse(file)
         root = nscan.getroot()

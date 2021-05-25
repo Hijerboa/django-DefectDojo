@@ -229,6 +229,9 @@ class CrashtestSecurityParser(object):
             return "JSON Report"
         return "XML Report"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
 
         if filename is None:

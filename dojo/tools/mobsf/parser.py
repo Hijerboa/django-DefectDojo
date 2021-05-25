@@ -18,6 +18,9 @@ class MobSFParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Export a JSON file using the API, api/v1/report_json."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         tree = filename.read()
         try:

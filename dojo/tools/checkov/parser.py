@@ -14,6 +14,9 @@ class CheckovParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import JSON reports of Infrastructure as Code vulnerabilities."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, json_output, test):
 
         if json_output is None:

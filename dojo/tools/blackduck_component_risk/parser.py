@@ -18,6 +18,9 @@ class BlackduckComponentRiskParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Upload the zip file containing the security.csv and files.csv."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         """
         Function initializes the parser with a file and sets the

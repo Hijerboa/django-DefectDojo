@@ -191,6 +191,9 @@ class VCGParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "VCG output can be imported in CSV or Xml formats."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
 
         if filename is None:

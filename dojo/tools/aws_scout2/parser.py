@@ -21,6 +21,9 @@ class AWSScout2Parser(object):
     def get_description_for_scan_types(self, scan_type):
         return "JS file in scout2-report/inc-awsconfig/aws_config.js."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         content = filename.read()
         if type(content) is bytes:

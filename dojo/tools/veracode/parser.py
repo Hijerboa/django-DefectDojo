@@ -32,6 +32,9 @@ class VeracodeParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Detailed XML Report"
 
+    def handles_active_verified_status(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         root = ElementTree.parse(filename).getroot()
 

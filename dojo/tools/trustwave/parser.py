@@ -17,6 +17,9 @@ class TrustwaveParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "CSV output of Trustwave vulnerability scan."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
 
         content = filename.read()

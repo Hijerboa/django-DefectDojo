@@ -14,6 +14,9 @@ class NspParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Node Security Platform (NSP) output file can be imported in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, json_output, test):
 
         tree = self.parse_json(json_output)

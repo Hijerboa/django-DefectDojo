@@ -15,6 +15,9 @@ class SnykParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Snyk output file (snyk test --json > snyk.json) can be imported in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, json_output, test):
 
         reportTree = self.parse_json(json_output)

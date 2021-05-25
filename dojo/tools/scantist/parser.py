@@ -27,6 +27,9 @@ class ScantistParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import Scantist Dependency Scanning Report vulnerabilities in JSON format."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         tree = json.load(file)
         return self.get_items(tree, test)

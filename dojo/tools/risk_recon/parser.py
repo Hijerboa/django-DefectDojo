@@ -16,6 +16,9 @@ class RiskReconParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Risk Recon ApI will be accessed to gather finding information. Report format here."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         if filename:
             tree = filename.read()

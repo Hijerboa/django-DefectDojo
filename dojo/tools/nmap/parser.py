@@ -16,6 +16,9 @@ class NmapParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "XML output (use -oX)"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, file, test):
         tree = parse(file)
         root = tree.getroot()

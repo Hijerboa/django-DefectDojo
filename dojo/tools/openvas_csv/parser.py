@@ -258,6 +258,9 @@ class OpenVASCsvParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import OpenVAS Scan in CSV format. Export as CSV Results on OpenVAS."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
 
         column_names = dict()

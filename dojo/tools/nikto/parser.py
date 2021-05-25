@@ -31,6 +31,9 @@ class NiktoParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "XML output (old and new nxvmlversion=\"1.2\" type) or JSON output"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         if filename.name.lower().endswith('.xml'):
             return self.process_xml(filename, test)

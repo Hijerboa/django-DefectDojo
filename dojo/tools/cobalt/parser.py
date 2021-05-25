@@ -18,6 +18,9 @@ class CobaltParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "CSV Report"
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         if filename is None:
             return list()

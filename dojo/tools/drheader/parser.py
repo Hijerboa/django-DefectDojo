@@ -14,6 +14,9 @@ class DrHeaderParser(object):
     def get_description_for_scan_types(self, scan_type):
         return "Import result of DrHeader JSON output."
 
+    def handles_active_verified_statuses(self, scan_type):
+        return False
+
     def get_findings(self, filename, test):
         data = json.load(filename)
         items = []
