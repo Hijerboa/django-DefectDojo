@@ -72,5 +72,5 @@ django-tagulous==1.1.0
 PyJWT==2.0.1
 cvss==2.2
 django-jsonfield-backport==1.0.3
-django-fieldsignals==0.6.0
+django-fieldsignals==0.7.0
 hyperlink==21.0.0
