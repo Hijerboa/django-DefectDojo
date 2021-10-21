@@ -25,7 +25,7 @@ setup(
         'django-tastypie>=0.12.2',
         'django-rest-swagger==2.1.2',
         'djangorestframework==3.12.4',
-        'django-environ==0.4.5',
+        'django-environ==0.8.1',
         'django-axes',
         'gunicorn>=19.1.1',
         'html2text',
@@ -61,7 +61,7 @@ setup(
         'pandas>=0.22.0',
         'django-dbbackup>=3.2.0',
         'whitenoise==4.1.4',
-        'django-environ==0.4.5',
+        'django-environ==0.8.1',
         'titlecase',
         'jsonlines==2.0.0'  # requred by yarn audit parser
     ],
